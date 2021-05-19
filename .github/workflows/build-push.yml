@@ -1,0 +1,17 @@
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Touch file in dist"
+        run: |
+          touch /tmp/dist/README
+      - name: "Add some text to README"
+        run: |
+          echo "some text" > /tmp/dist/README
+      - name: "Read README"
+        run: |
+          cat /tmp/dist/README
