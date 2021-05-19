@@ -6,6 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: "Create dist folder"
+        run: |
+          mkdir /tmp/dist
       - name: "Touch file in dist"
         run: |
           touch /tmp/dist/README
